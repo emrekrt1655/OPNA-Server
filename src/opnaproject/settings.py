@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -114,6 +114,7 @@ REST_FRAMEWORK = {
         
     ]
 
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
