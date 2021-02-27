@@ -47,6 +47,9 @@ class News(models.Model):
     vocab_five = models.CharField(max_length=200, blank=True)
     vocab_five_mean = models.TextField(blank=True)
     
+    def __str__ (self):
+        return self.headtitle
+    
     
     
     

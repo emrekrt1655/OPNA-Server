@@ -8,5 +8,6 @@ class NewsAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
     list_display_links = ('id', 'headtitle')
     search_fields = ('headtitle', 'category' )
     list_per_page = 25
+    summernote_fields = ('content',)
     
 admin.site.register(News, NewsAdmin)
