@@ -11,12 +11,12 @@ from rest_framework.permissions import IsAdminUser, AllowAny
 class SubscriberCreateApiView(generics.CreateAPIView):
     queryset = Subscriber.objects.all()
     permissions_classes = [AllowAny]
-    serializers_class = RegisterUpdateSerializer
+    serializer_class = RegisterUpdateSerializer
     
 class SubscriberListView(generics.ListAPIView):
-    queryset = Subscriber.objects.all()
+    queryset = Subscriber.objects.order_by('-date_created')
     permissions_classes = [IsAdminUser]
-    serializers_class = SubscriberSerializer
+    serializer_class = SubscriberSerializer
 
 class SubscriberCategoryListView(generics.ListAPIView):
     serializer_class = SubscriberSerializer
@@ -30,13 +30,15 @@ class SubscriberCategoryListView(generics.ListAPIView):
 class SubscriberDetailView(generics.RetrieveAPIView):
     queryset = Subscriber.objects.all()
     permissions_classes = [IsAdminUser]
-    serializers_class =[SubscriberDetailSerializer]
+    serializer_class = SubscriberDetailSerializer
+    lookup_field = 'slug'
+    
     
 class SubscriberUpdateApiView(generics.RetrieveUpdateAPIView):
     queryset = Subscriber.objects.all()
     permissions_classes = [IsAdminUser]
     lookup_field = 'slug'
-    serializers_class = RegisterUpdateSerializer
+    serializer_class = RegisterUpdateSerializer
     
     def perform_update(self, serializer):
         serializer.save()
@@ -44,5 +46,5 @@ class SubscriberUpdateApiView(generics.RetrieveUpdateAPIView):
 class SubscriberDeleteApiView(generics.DestroyAPIView):
     permissions_classes = [IsAdminUser]
     queryset = Subscriber.objects.all()
-    serializers_class =[SubscriberDetailSerializer]
+    serializer_class =[SubscriberDetailSerializer]
     lookup_field = 'slug'

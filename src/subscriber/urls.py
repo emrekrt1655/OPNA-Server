@@ -8,5 +8,5 @@ urlpatterns = [
     path('delete/<slug>/', SubscriberDeleteApiView.as_view(), name='subscriber-delete'),
     path('create/', SubscriberCreateApiView.as_view(), name='create'),
     path('update/<slug>/', SubscriberUpdateApiView.as_view(), name='subscriber-update'),
-    path('<slug>/', SubscriberDetailView.as_view(), name='detail-subscriber'),
+    path('detailed/<slug>/', SubscriberDetailView.as_view(), name='detail-subscriber'),
 ]

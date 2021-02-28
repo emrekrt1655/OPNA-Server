@@ -8,6 +8,7 @@ class Subscriber(models.Model):
     email = models.EmailField(unique=True)
     subscription = models.CharField(max_length=50, choices = Categories.choices, default = Categories.ENGLISH)
     slug = models.SlugField(blank=True, unique=True)
+    date_created = models.DateTimeField(auto_now_add=True)
     
     def __str__ (self):
         return self.name + ' ' + self.surname + '-' + self.subscription

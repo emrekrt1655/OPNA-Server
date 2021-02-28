@@ -4,6 +4,20 @@ from .models import Subscriber
 from rest_framework.validators import UniqueValidator
 
 
+
+
+class SubscriberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subscriber
+        fields = ('name', 'surname', 'email', 'subscription', 'subscriber_count', 'date_created', 'detail_url')
+        
+    
+    detail_url = serializers.HyperlinkedIdentityField(
+        view_name='detail-subscriber',
+        lookup_field='slug'
+    )
+
+
 class RegisterUpdateSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
         required=True,
@@ -17,15 +31,7 @@ class RegisterUpdateSerializer(serializers.ModelSerializer):
     
 
 
-class SubscriberSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Subscriber
-        fields = ('name', 'surname', 'email', 'subscription', 'subscriber_count', 'detail_url')
-    
-    detail_url = serializers.HyperlinkedIdentityField(
-        view_name='detail-subscriber',
-        lookup_field='slug'
-    )
+
     
         
     
