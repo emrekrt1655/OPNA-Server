@@ -16,14 +16,14 @@ class NewsListView(ListAPIView):
     pagination_class = MyPagination
 
 
-class NewsCategoryView(ListAPIView):
-    serializer_class = NewsSerializer
-    permission_classes = [AllowAny]
+# class NewsCategoryView(ListAPIView):
+#     serializer_class = NewsSerializer
+#     permission_classes = [AllowAny]
 
-    def get_queryset(self):
-        category = self.kwargs["category"]
-        queryset = News.objects.filter(category__iexact=category)
-        return queryset
+#     def get_queryset(self):
+#         category = self.kwargs["category"]
+#         queryset = News.objects.filter(category__iexact=category)
+#         return queryset
 
 
 class NewsDetailView(RetrieveAPIView):
