@@ -10,4 +10,4 @@ from .utils import get_random_code
 def pre_save_create_code(sender, instance, **kwargs):
     if not instance.slug:
         instance.slug = slugify(
-            instance.category + " " + get_random_code())
+            instance.excerpt + " " + get_random_code())

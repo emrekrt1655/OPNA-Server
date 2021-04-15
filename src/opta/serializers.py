@@ -32,5 +32,5 @@ class TaleDetailSerializer(serializers.ModelSerializer):
 class TaleCreateUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tale
-        fields = ['headtitle', 'slug', 'category', 'image', 'excerpt', 'published', 'day', 'month', 'year', 'date_created', 'tale_content',
+        fields = ['headtitle', 'slug', 'image', 'excerpt', 'published', 'day', 'month', 'year', 'date_created', 'tale_content',
                   'vocab_one', 'vocab_one_mean', 'vocab_two', 'vocab_two_mean', 'vocab_three', 'vocab_three_mean', 'vocab_four', 'vocab_four_mean', 'vocab_five', 'vocab_five_mean']
