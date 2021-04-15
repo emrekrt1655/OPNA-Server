@@ -3,22 +3,22 @@ from datetime import datetime
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 
-class Categories(models.TextChoices):
-    ENGLISH = 'english',
-    GERMAN = 'german',
-    TURKISH = 'turkish',
-    FRENCH = 'french',
-    RUSSIAN = 'russian',
-    UKRAINIAN = 'ukranian',
-    SPANISH = 'spanish',
-    ARABIC = 'arabic',
-    ROMANIAN = 'romanian',
-    CHINESE = 'chinese'
+# class Categories(models.TextChoices):
+#     ENGLISH = 'english',
+#     GERMAN = 'german',
+#     TURKISH = 'turkish',
+#     FRENCH = 'french',
+#     RUSSIAN = 'russian',
+#     UKRAINIAN = 'ukranian',
+#     SPANISH = 'spanish',
+#     ARABIC = 'arabic',
+#     ROMANIAN = 'romanian',
+#     CHINESE = 'chinese'
     
 class News(models.Model):
     headtitle = models.CharField(max_length=200)
     slug = models.SlugField(blank=True, unique=True)
-    category = models.CharField(max_length=50, choices = Categories.choices, default = Categories.ENGLISH)
+    # category = models.CharField(max_length=50, choices = Categories.choices, default = Categories.ENGLISH)
     image = models.CharField(max_length=1000, default= "https://images.pexels.com/photos/97050/pexels-photo-97050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
     excerpt = models.CharField(max_length=300, blank=True)
     published =models.BooleanField(default=False)
