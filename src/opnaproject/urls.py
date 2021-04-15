@@ -21,5 +21,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('api/news/', include('opna.urls')),
     path('api/bible/', include('opba.urls')),
+    path('api/tale/', include('opta.urls')),
     path('subscriber/', include('subscriber.urls')),
 ]

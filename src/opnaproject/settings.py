@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'opna.apps.OpnaConfig',
     'opba.apps.OpbaConfig',
+    'opta.apps.OpbaConfig',
     'subscriber.apps.SubscriberConfig'
     
     
