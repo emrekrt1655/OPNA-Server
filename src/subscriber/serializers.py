@@ -9,11 +9,15 @@ from rest_framework.validators import UniqueValidator
 class SubscriberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscriber
-        fields = ('name', 'surname', 'email', 'subscription', 'subscriber_count', 'date_created', 'detail_url')
+        fields = ('name', 'surname', 'email', 'subscriptionLevel', 'subscriber_count', 'date_created', 'detail_url', 'level_url')
         
     
     detail_url = serializers.HyperlinkedIdentityField(
         view_name='detail-subscriber',
+        lookup_field='slug'
+    )
+    level_url = serializers.HyperlinkedIdentityField(
+        view_name='subscriber-category-level-list',
         lookup_field='slug'
     )
 
@@ -26,7 +30,7 @@ class RegisterUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Subscriber
-        fields = ('name', 'surname', 'email', 'subscription')
+        fields = ('name', 'surname', 'email', 'subscriptionLevel' )
         
     
 

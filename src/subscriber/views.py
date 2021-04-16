@@ -18,14 +18,21 @@ class SubscriberListView(generics.ListAPIView):
     permissions_classes = [IsAdminUser]
     serializer_class = SubscriberSerializer
 
-class SubscriberCategoryListView(generics.ListAPIView):
+# class SubscriberCategoryListView(generics.ListAPIView):
+#     serializer_class = SubscriberSerializer
+#     permission_classes = [IsAdminUser]
+#     def get_queryset(self):
+#         subscription = self.kwargs["subscription"]
+#         queryset = Subscriber.objects.filter(subscription__iexact=subscription)
+#         return queryset
+
+class SubscriberCategoryLevelListView(generics.ListAPIView):
     serializer_class = SubscriberSerializer
     permission_classes = [IsAdminUser]
     def get_queryset(self):
-        subscription = self.kwargs["subscription"]
-        queryset = Subscriber.objects.filter(subscription__iexact=subscription)
+        subscriptionLevel = self.kwargs["subscriptioLevel"]
+        queryset = Subscriber.objects.filter(subscriptionLevel__iexact=subscriptionLevel)
         return queryset
-
 
 class SubscriberDetailView(generics.RetrieveAPIView):
     queryset = Subscriber.objects.all()
