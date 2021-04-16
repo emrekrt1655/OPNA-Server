@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'opna.apps.OpnaConfig',
     'opda.apps.OpdaConfig',
     'opba.apps.OpbaConfig',
+    'opla.apps.OplaConfig',
     'opta.apps.OptaConfig',
     'subscriber.apps.SubscriberConfig'
     

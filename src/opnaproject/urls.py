@@ -23,5 +23,6 @@ urlpatterns = [
     path('api/bible/', include('opba.urls')),
     path('api/tale/', include('opta.urls')),
     path('api/dialog/', include('opda.urls')),
+    path('api/language/', include('opda.urls')),
     path('subscriber/', include('subscriber.urls')),
 ]
