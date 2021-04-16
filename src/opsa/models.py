@@ -15,19 +15,18 @@ from django.contrib.auth.models import User
 #     ROMANIAN = 'romanian',
 #     CHINESE = 'chinese'
 
-class Dialog(models.Model):
+class Story(models.Model):
     headtitle = models.CharField(max_length=200)
     slug = models.SlugField(blank=True, unique=True)
-    place = models.CharField(max_length=200)
     # category = models.CharField(max_length=50, choices = Categories.choices, default = Categories.ENGLISH)
-    image = models.CharField(max_length=1000, default= "https://images.pexels.com/photos/6567345/pexels-photo-6567345.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
+    image = models.CharField(max_length=1000, default= "https://images.pexels.com/photos/1112048/pexels-photo-1112048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
     excerpt = models.CharField(max_length=300, blank=True)
     published =models.BooleanField(default=False)
     day = models.CharField(max_length=2)
     month = models.CharField(max_length=2)
     year = models.CharField(max_length=4)
     date_created = models.DateTimeField(auto_now_add=True)
-    dialog_content = models.TextField()
+    story_content = models.TextField()
     vocab_one = models.CharField(max_length=200)
     vocab_one_mean = models.TextField()
     vocab_two = models.CharField(max_length=200)

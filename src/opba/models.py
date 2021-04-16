@@ -26,7 +26,7 @@ class Bible(models.Model):
     month = models.CharField(max_length=2)
     year = models.CharField(max_length=4)
     date_created = models.DateTimeField(auto_now_add=True)
-    chapter = models.CharField(max_length=300)
+    chapter = models.CharField(max_length=300, blank=True)
     chapter_content = models.TextField()
     vocab_one = models.CharField(max_length=200)
     vocab_one_mean = models.TextField()
