@@ -22,5 +22,6 @@ urlpatterns = [
     path('api/news/', include('opna.urls')),
     path('api/bible/', include('opba.urls')),
     path('api/tale/', include('opta.urls')),
+    path('api/dialog/', include('opda.urls')),
     path('subscriber/', include('subscriber.urls')),
 ]

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_summernote',
     'opna.apps.OpnaConfig',
+    'opda.apps.OpdaConfig',
     'opba.apps.OpbaConfig',
     'opta.apps.OptaConfig',
     'subscriber.apps.SubscriberConfig'
