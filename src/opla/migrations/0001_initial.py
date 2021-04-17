@@ -14,11 +14,14 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Language',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('headtitle', models.CharField(max_length=200)),
                 ('slug', models.SlugField(blank=True, unique=True)),
-                ('level', models.CharField(choices=[('A1', 'A1'), ('A2', 'A2'), ('B1', 'B1'), ('B2', 'B2'), ('C1', 'C1')], default='A1', max_length=2)),
-                ('image', models.CharField(default='https://images.pexels.com/photos/5088008/pexels-photo-5088008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260', max_length=1000)),
+                ('level', models.CharField(choices=[('A1', 'A1'), ('A2', 'A2'), (
+                    'B1', 'B1'), ('B2', 'B2'), ('C1', 'C1')], default='A1', max_length=2)),
+                ('image', models.CharField(
+                    default='https://images.pexels.com/photos/5088008/pexels-photo-5088008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260', max_length=1000)),
                 ('excerpt', models.CharField(blank=True, max_length=300)),
                 ('published', models.BooleanField(default=False)),
                 ('day', models.CharField(max_length=2)),

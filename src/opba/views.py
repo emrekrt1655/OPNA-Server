@@ -7,13 +7,14 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from opna.pagination import MyPagination
 
+
 class BibleListView(ListAPIView):
     serializer_class = BibleSerializer
     queryset = Bible.objects.order_by('-date_created').filter(published=True)
     lookup_field = 'slug'
     permission_classes = [AllowAny]
     pagination_class = MyPagination
-    
+
 # class BibleCategoryView(ListAPIView):
 #     serializer_class = BibleSerializer
 #     permission_classes = [AllowAny]
@@ -23,18 +24,20 @@ class BibleListView(ListAPIView):
 #         queryset = Bible.objects.filter(category__iexact=category)
 #         return queryset
 
+
 class BibleDetailView(RetrieveAPIView):
     queryset = Bible.objects.order_by('-date_created')
     serializer_class = BibleDetailSerializer
     lookup_field = 'slug'
     permission_classes = [AllowAny]
-    
+
 
 class BibleCreateApiView(CreateAPIView):
     permission_classes = [IsAdminUser]
     queryset = Bible.objects.all()
     serializer_class = BibleCreateUpdateSerializer
-    
+
+
 class BibleDeleteApiView(DestroyAPIView):
     permission_classes = [IsAdminUser]
     queryset = Bible.objects.all()

@@ -4,6 +4,7 @@ from .views import *
 urlpatterns = [
     path('list/', DialogListView.as_view(), name="list"),
     #     path('list/<category>/', DialogCategoryView.as_view(), name='category_list'),
+    path('create/', DialogCreateApiView.as_view(), name='create'),
     path('list/<place>/', DialogPlaceListView.as_view(), name='place-list'),
     path('list/detail/<slug>/', DialogDetailView.as_view(), name='detailed-dialog'),
     path('list/detail/<slug>/delete/',

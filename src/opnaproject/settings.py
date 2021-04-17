@@ -47,9 +47,10 @@ INSTALLED_APPS = [
     'opba.apps.OpbaConfig',
     'opla.apps.OplaConfig',
     'opta.apps.OptaConfig',
+    'opsa.apps.OpsaConfig',
     'subscriber.apps.SubscriberConfig'
-    
-    
+
+
 ]
 
 MIDDLEWARE = [
@@ -118,7 +119,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         # 'rest_framework.authentication.SessionAuthentication',
         # 'rest_framework.authentication.TokenAuthentication',
-        
+
     ]
 
 }
@@ -145,5 +146,5 @@ STATIC_URL = '/static/'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_THEME = 'bs4'
 
-CORS_ALLOW_ALL_ORIGINS = True 
+CORS_ALLOW_ALL_ORIGINS = True
 django_heroku.settings(locals())

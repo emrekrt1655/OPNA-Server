@@ -14,10 +14,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Tale',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('headtitle', models.CharField(max_length=200)),
                 ('slug', models.SlugField(blank=True, unique=True)),
-                ('image', models.CharField(default='https://images.pexels.com/photos/7504937/pexels-photo-7504937.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260', max_length=1000)),
+                ('image', models.CharField(
+                    default='https://images.pexels.com/photos/7504937/pexels-photo-7504937.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260', max_length=1000)),
                 ('excerpt', models.CharField(blank=True, max_length=300)),
                 ('published', models.BooleanField(default=False)),
                 ('day', models.CharField(max_length=2)),

@@ -6,10 +6,8 @@ from opna.utils import get_random_code
 from django.template.defaultfilters import slugify
 
 
-
-        
 @receiver(pre_save, sender=Subscriber)
 def pre_save_create_code(sender, instance, **kwargs):
     if not instance.slug:
         instance.slug = slugify(
-            get_random_code()+ " " + get_random_code())
+            get_random_code() + " " + get_random_code())

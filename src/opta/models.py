@@ -15,13 +15,15 @@ from django.contrib.auth.models import User
 #     ROMANIAN = 'romanian',
 #     CHINESE = 'chinese'
 
+
 class Tale(models.Model):
     headtitle = models.CharField(max_length=200)
     slug = models.SlugField(blank=True, unique=True)
     # category = models.CharField(max_length=50, choices = Categories.choices, default = Categories.ENGLISH)
-    image = models.CharField(max_length=1000, default= "https://images.pexels.com/photos/7504937/pexels-photo-7504937.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
+    image = models.CharField(
+        max_length=1000, default="https://images.pexels.com/photos/7504937/pexels-photo-7504937.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260")
     excerpt = models.CharField(max_length=300, blank=True)
-    published =models.BooleanField(default=False)
+    published = models.BooleanField(default=False)
     day = models.CharField(max_length=2)
     month = models.CharField(max_length=2)
     year = models.CharField(max_length=4)
@@ -37,6 +39,6 @@ class Tale(models.Model):
     vocab_four_mean = models.TextField(blank=True)
     vocab_five = models.CharField(max_length=200, blank=True)
     vocab_five_mean = models.TextField(blank=True)
-    
-    def __str__ (self):
+
+    def __str__(self):
         return self.headtitle

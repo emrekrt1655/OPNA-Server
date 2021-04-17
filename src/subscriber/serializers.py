@@ -4,22 +4,20 @@ from .models import Subscriber
 from rest_framework.validators import UniqueValidator
 
 
-
-
 class SubscriberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscriber
-        fields = ('name', 'surname', 'email', 'subscriptionLevel', 'subscriber_count', 'date_created', 'detail_url', 'level_url')
-        
-    
+        fields = ('name', 'surname', 'email', 'level',
+                  'subscriber_count', 'date_created', 'detail_url')
+
     detail_url = serializers.HyperlinkedIdentityField(
         view_name='detail-subscriber',
         lookup_field='slug'
     )
-    level_url = serializers.HyperlinkedIdentityField(
-        view_name='subscriber-category-level-list',
-        lookup_field='slug'
-    )
+    # level_url = serializers.HyperlinkedIdentityField(
+    #     view_name='level-list',
+    #     lookup_field='slug'
+    # )
 
 
 class RegisterUpdateSerializer(serializers.ModelSerializer):
@@ -30,21 +28,16 @@ class RegisterUpdateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Subscriber
-        fields = ('name', 'surname', 'email', 'subscriptionLevel' )
-        
-    
+        fields = ('name', 'surname', 'email', 'level')
 
 
-
-    
-        
-    
 class SubscriberDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscriber
-        fields = ('name', 'surname', 'email', 'subscription', 'slug', 'update_url', 'delete_url')
+        fields = ('name', 'surname', 'email', 'level',
+                  'slug', 'update_url', 'delete_url')
         lookup_field = 'slug'
-        
+
     update_url = serializers.HyperlinkedIdentityField(
         view_name='subscriber-update',
         lookup_field='slug'
@@ -53,4 +46,3 @@ class SubscriberDetailSerializer(serializers.ModelSerializer):
         view_name='subscriber-delete',
         lookup_field='slug'
     )
-    
